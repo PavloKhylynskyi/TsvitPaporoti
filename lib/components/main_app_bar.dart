@@ -19,6 +19,14 @@ AppBar buildMainAppBar() => AppBar(
               right: 10,
               top: 10,
               child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  '2',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 7.0,
+                  ),
+                ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.red,
