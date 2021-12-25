@@ -16,7 +16,7 @@ class Application extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tsvit paporoti',
       theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
+      // darkTheme: AppTheme.dark,
       routes: navigation.routes,
     );
   }
