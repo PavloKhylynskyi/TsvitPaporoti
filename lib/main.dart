@@ -18,8 +18,8 @@ class Application extends StatelessWidget {
       title: 'Tsvit paporoti',
       theme: AppTheme.light,
       // darkTheme: AppTheme.dark,
-      // routes: navigation.routes,
-      home: ProductScreen(),
+      routes: navigation.routes,
+      // home: ProductScreen(),
     );
   }
 }

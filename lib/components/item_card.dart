@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tsvit_paporoti/constants/constants.dart';
+import 'package:tsvit_paporoti/navigation/navigation.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({Key? key}) : super(key: key);
@@ -39,9 +40,9 @@ class ItemCard extends StatelessWidget {
                             ElevatedButton(
                               onPressed: () {},
                               child: Row(
-                                children: [
-                                  const Icon(Icons.shopping_cart),
-                                  const Text('В корзину'),
+                                children: const [
+                                  Icon(Icons.shopping_cart),
+                                  Text('В корзину'),
                                 ],
                               ),
                               style: ElevatedButton.styleFrom(
@@ -64,21 +65,6 @@ class ItemCard extends StatelessWidget {
                               height: 36,
                               width: 36,
                             ),
-
-                            // Container(
-                            //   child: Icon(
-                            //     Icons.favorite,
-                            //     size: 15,
-                            //   ),
-                            //   decoration: BoxDecoration(
-                            //     border: Border.all(
-                            //       color: Colors.grey,
-                            //     ),
-                            //   ),
-                            //   width: 36,
-                            //   height: 36,
-                            //   margin: EdgeInsets.all(5.0),
-                            // ),
                           ],
                         ),
                       ),
@@ -97,6 +83,9 @@ class ItemCard extends StatelessWidget {
           ),
         ),
       ),
+      onTap: () {
+        Navigator.pushNamed(context, Screens.product);
+      },
     );
   }
 }

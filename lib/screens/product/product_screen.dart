@@ -9,7 +9,7 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildMainAppBar(),
-      body: _Body(),
+      body: const _Body(),
     );
   }
 }
@@ -25,12 +25,12 @@ class _Body extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Gallery(),
-            SizedBox(height: 10),
+            const Gallery(),
+            const SizedBox(height: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Мило Грація',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
                 ),
@@ -39,24 +39,24 @@ class _Body extends StatelessWidget {
                     Row(
                       children: List.generate(
                         5,
-                        (index) => Icon(
+                        (index) => const Icon(
                           Icons.star,
                           color: Colors.amber,
                           size: 15,
                         ),
                       ),
                     ),
-                    SizedBox(width: 15),
-                    Text(
+                    const SizedBox(width: 15),
+                    const Text(
                       '1 відгук',
                       style: TextStyle(fontWeight: FontWeight.w300),
                     ),
-                    VerticalDivider(),
+                    const VerticalDivider(),
                     TextButton(
                       onPressed: () {
                         _buildDialog(context);
                       },
-                      child: Text(
+                      child: const Text(
                         'Написати відгук',
                         style: TextStyle(fontWeight: FontWeight.w300),
                       ),
@@ -66,12 +66,12 @@ class _Body extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           'Виробник:',
                           style: TextStyle(fontWeight: FontWeight.w300),
@@ -92,12 +92,12 @@ class _Body extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 50,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           'Цвіт папороті',
                           style: TextStyle(fontWeight: FontWeight.w300),
@@ -123,13 +123,13 @@ class _Body extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Container(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     '55,00\$',
                     style: TextStyle(
                       color: kPrimaryColor,
@@ -139,14 +139,14 @@ class _Body extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      ItemCounter(),
-                      SizedBox(width: 10),
+                      const ItemCounter(),
+                      const SizedBox(width: 10),
                       ElevatedButton(
                         onPressed: () {},
                         child: Row(
-                          children: [
-                            const Icon(Icons.shopping_cart),
-                            const Text('В корзину'),
+                          children: const [
+                            Icon(Icons.shopping_cart),
+                            Text('В корзину'),
                           ],
                         ),
                         style: ElevatedButton.styleFrom(
@@ -155,7 +155,7 @@ class _Body extends StatelessWidget {
                           elevation: 0,
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Container(
                         child: IconButton(
                           onPressed: () {},
@@ -175,9 +175,9 @@ class _Body extends StatelessWidget {
                   ),
                 ],
               ),
-              color: Color(0xFFF5F5F5),
+              color: const Color(0xFFF5F5F5),
             ),
-            Tabs(),
+            const Tabs(),
           ],
         ),
       ),
@@ -189,14 +189,14 @@ class _Body extends StatelessWidget {
         builder: (context) => Dialog(
           child: Container(
             height: 500,
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Ваше ім\'я'),
+                const Text('Ваше ім\'я'),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: TextField(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: const TextField(
                     textCapitalization: TextCapitalization.words,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -209,10 +209,10 @@ class _Body extends StatelessWidget {
                   ),
                   width: 200,
                 ),
-                Text('Ваш відгук'),
+                const Text('Ваш відгук'),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: TextField(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: const TextField(
                     maxLines: 15,
                   ),
                   width: 200,
@@ -236,102 +236,100 @@ class _TabsState extends State<Tabs> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextButton(
-                  child: Text(
-                    'Опис',
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      state = 0;
-                    });
-                  },
-                  style: TextButton.styleFrom(
-                    primary: Colors.black,
-                    shape: BeveledRectangleBorder(),
-                  ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: TextButton(
+                child: const Text(
+                  'Опис',
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
+                onPressed: () {
+                  setState(() {
+                    state = 0;
+                  });
+                },
+                style: TextButton.styleFrom(
+                  primary: Colors.black,
+                  shape: const BeveledRectangleBorder(),
                 ),
               ),
-              Expanded(
-                child: TextButton(
-                  child: Text(
-                    'Відгуки',
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      state = 1;
-                    });
-                  },
-                  style: TextButton.styleFrom(
-                    primary: Colors.black,
-                    shape: BeveledRectangleBorder(),
-                  ),
+            ),
+            Expanded(
+              child: TextButton(
+                child: const Text(
+                  'Відгуки',
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
+                onPressed: () {
+                  setState(() {
+                    state = 1;
+                  });
+                },
+                style: TextButton.styleFrom(
+                  primary: Colors.black,
+                  shape: const BeveledRectangleBorder(),
                 ),
               ),
-            ],
-          ),
-          Container(
-            child: (state == 0)
-                ? Column(
-                    children: [
-                      Text(
-                        '''Зварене за рецептом Дитячого мила з'''
-                        ''' додавання подрібнених квітів календули та ромашки. '''
-                        '''Ароматна композиція має заспокійливий, гармонізуючий ефект.'''
-                        '''\n\nДля всіх типів шкіри.\n''',
-                        style: TextStyle(fontWeight: FontWeight.w300),
-                      ),
-                      Text(
-                        '''Склад: Омилені олії оливкова, кокосова, касторова, '''
-                        '''соняшникова; відвар ромашки та календули; NaOH;'''
-                        ''' ефірні олії герані, меліси, кипариса.\n\nЗберігати при температурі -5-+22 °С і вологості повітря 75%.'''
-                        ''' Термін придатності – 9 місяців.''',
-                        style: TextStyle(fontWeight: FontWeight.w300),
-                      )
-                    ],
-                  )
-                : Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Діана, 10/04/2019',
-                            style: TextStyle(fontWeight: FontWeight.w300),
-                          ),
-                          Row(
-                            children: List.generate(
-                              5,
-                              (index) => Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                                size: 15,
-                              ),
+            ),
+          ],
+        ),
+        Container(
+          child: (state == 0)
+              ? Column(
+                  children: const [
+                    Text(
+                      '''Зварене за рецептом Дитячого мила з'''
+                      ''' додавання подрібнених квітів календули та ромашки. '''
+                      '''Ароматна композиція має заспокійливий, гармонізуючий ефект.'''
+                      '''\n\nДля всіх типів шкіри.\n''',
+                      style: TextStyle(fontWeight: FontWeight.w300),
+                    ),
+                    Text(
+                      '''Склад: Омилені олії оливкова, кокосова, касторова, '''
+                      '''соняшникова; відвар ромашки та календули; NaOH;'''
+                      ''' ефірні олії герані, меліси, кипариса.\n\nЗберігати при температурі -5-+22 °С і вологості повітря 75%.'''
+                      ''' Термін придатності – 9 місяців.''',
+                      style: TextStyle(fontWeight: FontWeight.w300),
+                    )
+                  ],
+                )
+              : Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Діана, 10/04/2019',
+                          style: TextStyle(fontWeight: FontWeight.w300),
+                        ),
+                        Row(
+                          children: List.generate(
+                            5,
+                            (index) => const Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 15,
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        '''Чудове ароматне мило, приємне у використанні. '''
-                        '''Може бути як бадьорящим так і заспокійливим завдяки такому підбору трав! '''
-                        '''Дуже подобається така композиція, Користуємося вашим милом, '''
-                        '''пробували різні, хороша якість!''',
-                        style: TextStyle(fontWeight: FontWeight.w300),
-                      ),
-                    ],
-                  ),
-          ),
-        ],
-      ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      '''Чудове ароматне мило, приємне у використанні. '''
+                      '''Може бути як бадьорящим так і заспокійливим завдяки такому підбору трав! '''
+                      '''Дуже подобається така композиція, Користуємося вашим милом, '''
+                      '''пробували різні, хороша якість!''',
+                      style: TextStyle(fontWeight: FontWeight.w300),
+                    ),
+                  ],
+                ),
+        ),
+      ],
     );
   }
 }
@@ -364,7 +362,7 @@ class _ItemCounterState extends State<ItemCounter> {
                 });
               }
             },
-            child: Icon(
+            child: const Icon(
               Icons.remove,
               size: 17,
             ),
@@ -373,7 +371,7 @@ class _ItemCounterState extends State<ItemCounter> {
               shape: RoundedRectangleBorder(),
             ),
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             border: Border(
               top: BorderSide(color: kGreyColor),
@@ -413,16 +411,16 @@ class _ItemCounterState extends State<ItemCounter> {
                 });
               }
             },
-            child: Icon(
+            child: const Icon(
               Icons.add,
               size: 17,
             ),
             style: TextButton.styleFrom(
               primary: Colors.black,
-              shape: RoundedRectangleBorder(),
+              shape: const RoundedRectangleBorder(),
             ),
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             border: Border(
               top: BorderSide(color: kGreyColor),
@@ -471,7 +469,7 @@ class _GalleryState extends State<Gallery> {
                 (index) => Container(
                   height: 100,
                   width: 105,
-                  padding: EdgeInsets.only(right: 5.0),
+                  padding: const EdgeInsets.only(right: 5.0),
                   child: GestureDetector(
                     child: Stack(
                       children: [
