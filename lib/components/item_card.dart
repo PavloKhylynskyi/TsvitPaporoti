@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsvit_paporoti/constants/constants.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: AspectRatio(
-        aspectRatio: 2.3,
+        aspectRatio: 2.4,
         child: Container(
           child: Row(
             children: [
@@ -27,37 +28,59 @@ class ItemCard extends StatelessWidget {
                       const Text(
                         '55,00 \$',
                         style: TextStyle(
-                          color: Colors.green,
+                          color: kPrimaryColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Row(
-                              children: [
-                                const Icon(Icons.shopping_cart),
-                                const Text('В корзину'),
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                shape: const BeveledRectangleBorder(),
-                                primary: Colors.green),
-                          ),
-                          Container(
-                            child: IconButton(
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5.0),
+                        child: Row(
+                          children: [
+                            ElevatedButton(
                               onPressed: () {},
-                              icon: const Icon(
-                                Icons.favorite,
+                              child: Row(
+                                children: [
+                                  const Icon(Icons.shopping_cart),
+                                  const Text('В корзину'),
+                                ],
                               ),
-                              color: Colors.black,
+                              style: ElevatedButton.styleFrom(
+                                shape: const BeveledRectangleBorder(),
+                                primary: kPrimaryColor,
+                                elevation: 0,
+                              ),
                             ),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
+                            Container(
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.favorite,
+                                ),
+                                color: Colors.black,
+                              ),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: kGreyColor),
+                              ),
+                              height: 36,
+                              width: 36,
                             ),
-                          ),
-                        ],
+
+                            // Container(
+                            //   child: Icon(
+                            //     Icons.favorite,
+                            //     size: 15,
+                            //   ),
+                            //   decoration: BoxDecoration(
+                            //     border: Border.all(
+                            //       color: Colors.grey,
+                            //     ),
+                            //   ),
+                            //   width: 36,
+                            //   height: 36,
+                            //   margin: EdgeInsets.all(5.0),
+                            // ),
+                          ],
+                        ),
                       ),
                     ],
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +93,7 @@ class ItemCard extends StatelessWidget {
           padding: const EdgeInsets.all(5.0),
           margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
+            border: Border.all(color: kGreyColor),
           ),
         ),
       ),
