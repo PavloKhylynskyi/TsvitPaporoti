@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tsvit_paporoti/navigation/navigation.dart';
+import 'package:tsvit_paporoti/screens/product/product_screen.dart';
 import 'package:tsvit_paporoti/theme/theme.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class Application extends StatelessWidget {
       theme: AppTheme.light,
       // darkTheme: AppTheme.dark,
       routes: navigation.routes,
+      // home: ProductScreen(),
     );
   }
 }

@@ -7,6 +7,7 @@ abstract class Screens {
   static const contacts = '/contacts';
   static const about = '/about';
   static const blog = '/blog';
+  static const product = '/product';
 }
 
 class Navigation {
@@ -18,5 +19,6 @@ class Navigation {
         Screens.contacts: (context) => _screenFactory.makeContactsScreen(),
         Screens.about: (context) => _screenFactory.makeAboutScreen(),
         Screens.blog: (context) => _screenFactory.makeBlogScreen(),
+        Screens.product: (context) => _screenFactory.makeProductScreen(),
       };
 }

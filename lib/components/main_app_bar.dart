@@ -10,7 +10,7 @@ AppBar buildMainAppBar() => AppBar(
         Stack(
           children: [
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
               ),
               onPressed: () {},
@@ -20,14 +20,14 @@ AppBar buildMainAppBar() => AppBar(
               top: 10,
               child: Container(
                 alignment: Alignment.center,
-                child: Text(
+                child: const Text(
                   '2',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 7.0,
                   ),
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.red,
                 ),

@@ -25,7 +25,7 @@ class Menu extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.store, (route) => false);
                 }),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ListTile(
@@ -40,7 +40,7 @@ class Menu extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.account, (route) => false);
                 }),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ListTile(
@@ -55,7 +55,7 @@ class Menu extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.contacts, (route) => false);
                 }),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ListTile(
@@ -68,7 +68,7 @@ class Menu extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.about, (route) => false);
                 }),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ListTile(

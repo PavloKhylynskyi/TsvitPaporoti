@@ -3,6 +3,7 @@ import 'package:tsvit_paporoti/screens/about/about_screen.dart';
 import 'package:tsvit_paporoti/screens/account/account_screen.dart';
 import 'package:tsvit_paporoti/screens/blog/blog_screen.dart';
 import 'package:tsvit_paporoti/screens/contacts/coantacts_screen.dart';
+import 'package:tsvit_paporoti/screens/product/product_screen.dart';
 import 'package:tsvit_paporoti/screens/store/store_screen.dart';
 
 class ScreensFactory {
@@ -11,4 +12,5 @@ class ScreensFactory {
   Widget makeContactsScreen() => const ContactsScreen();
   Widget makeAboutScreen() => const AboutScreen();
   Widget makeBlogScreen() => const BlogScreen();
+  Widget makeProductScreen() => const ProductScreen();
 }
