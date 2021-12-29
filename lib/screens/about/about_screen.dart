@@ -9,17 +9,26 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildMainAppBar(),
-      drawer: Menu(),
+      drawer: const Menu(),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: [
+          children: const [
             Text(
-              'Про нас',
-              style: TextStyle(fontSize: 30),
+              'ПРО НАС',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w300,
+              ),
             ),
             Text(
-                'Натуральне екологічно чисте мило "Цвіт папороті" зварене гарячим способом з жирних та ефірних олій, відварів трав та лужного розчину. Не містить SLS, парафіну та інших продуктів нафтопереробки, жирів тваринного походження, синтетичних барвників та ароматизаторів, консервантів. Мило повністю натуральне, вегетаріанське та веганське (крім молочного - містить молоко).')
+              '''Натуральне екологічно чисте мило "Цвіт папороті" зварене гарячим '''
+              '''способом з жирних та ефірних олій, відварів трав та лужного розчину. '''
+              '''Не містить SLS, парафіну та інших продуктів нафтопереробки, '''
+              '''жирів тваринного походження, синтетичних барвників та ароматизаторів, консервантів. '''
+              '''Мило повністю натуральне, вегетаріанське та веганське (крім молочного - містить молоко).''',
+              style: TextStyle(fontWeight: FontWeight.w300),
+            )
           ],
           crossAxisAlignment: CrossAxisAlignment.start,
         ),

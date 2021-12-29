@@ -3,6 +3,7 @@ import 'package:tsvit_paporoti/components/main_app_bar.dart';
 import 'package:tsvit_paporoti/constants/constants.dart';
 import 'package:tsvit_paporoti/screens/product/components/gallery.dart';
 import 'package:tsvit_paporoti/screens/product/components/item_counter.dart';
+import 'package:tsvit_paporoti/screens/product/components/response_dialog.dart';
 import 'package:tsvit_paporoti/screens/product/components/tabs.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -189,54 +190,9 @@ class _Body extends StatelessWidget {
 
   void _buildDialog(BuildContext context) => showDialog(
         context: context,
-        builder: (context) => Dialog(
-          shape: const BeveledRectangleBorder(),
-          child: Container(
-            height: 430,
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text('Ваше ім\'я'),
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: const TextField(
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: kGreyColor),
-                        borderRadius: BorderRadius.all(Radius.zero),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: kGreyColor),
-                        borderRadius: BorderRadius.all(Radius.zero),
-                      ),
-                    ),
-                  ),
-                  width: 300,
-                ),
-                const Text('Ваш відгук'),
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  child: const TextField(
-                    textCapitalization: TextCapitalization.sentences,
-                    maxLines: 10,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: kGreyColor),
-                        borderRadius: BorderRadius.all(Radius.zero),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: kGreyColor),
-                        borderRadius: BorderRadius.all(Radius.zero),
-                      ),
-                    ),
-                  ),
-                  width: 300,
-                ),
-              ],
-            ),
-          ),
+        builder: (context) => const Dialog(
+          shape: BeveledRectangleBorder(),
+          child: ResponseDialog(),
         ),
       );
 }

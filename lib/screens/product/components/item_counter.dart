@@ -35,7 +35,7 @@ class _ItemCounterState extends State<ItemCounter> {
             ),
             style: TextButton.styleFrom(
               primary: Colors.black,
-              shape: RoundedRectangleBorder(),
+              shape: const RoundedRectangleBorder(),
             ),
           ),
           decoration: const BoxDecoration(
