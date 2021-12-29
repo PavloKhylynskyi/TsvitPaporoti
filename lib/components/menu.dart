@@ -14,8 +14,13 @@ class Menu extends StatelessWidget {
         child: ListView(
           children: [
             ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Магазин'),
+                leading: Icon(
+                  Icons.store,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  'Магазин',
+                ),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.store, (route) => false);
@@ -24,8 +29,13 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(Icons.category),
-                title: Text('Обліковий запис'),
+                leading: Icon(
+                  Icons.account_box,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  'Обліковий запис',
+                ),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.account, (route) => false);
@@ -34,8 +44,13 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(Icons.account_box),
-                title: Text('Контакти'),
+                leading: Icon(
+                  Icons.contact_page,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  'Контакти',
+                ),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.contacts, (route) => false);
@@ -44,7 +59,10 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(Icons.contact_page),
+                leading: Icon(
+                  Icons.list_alt_outlined,
+                  color: Colors.black,
+                ),
                 title: Text('Про нас'),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
@@ -54,7 +72,10 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(Icons.contact_page),
+                leading: Icon(
+                  Icons.pending,
+                  color: Colors.black,
+                ),
                 title: Text('Блог'),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
