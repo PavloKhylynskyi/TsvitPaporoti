@@ -10,8 +10,8 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildMainAppBar(),
-      body: const _Body(),
-      drawer: const Menu(),
+      drawer: Menu(),
+      body: _Body(),
     );
   }
 }

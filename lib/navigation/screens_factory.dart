@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:tsvit_paporoti/screens/about/about_screen.dart';
 import 'package:tsvit_paporoti/screens/account/account_screen.dart';
 import 'package:tsvit_paporoti/screens/blog/blog_screen.dart';
-import 'package:tsvit_paporoti/screens/contacts/coantacts_screen.dart';
+import 'package:tsvit_paporoti/screens/contacts/contacts_screen.dart';
 import 'package:tsvit_paporoti/screens/product/product_screen.dart';
 import 'package:tsvit_paporoti/screens/store/store_screen.dart';
 
