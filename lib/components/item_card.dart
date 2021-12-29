@@ -27,7 +27,7 @@ class ItemCard extends StatelessWidget {
                       const Text('Мило Вівсяне'),
                       Divider(),
                       const Text(
-                        '55,00 \$',
+                        '55,00 ₴',
                         style: TextStyle(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.bold,
@@ -51,11 +51,13 @@ class ItemCard extends StatelessWidget {
                                 elevation: 0,
                               ),
                             ),
+                            const SizedBox(width: 10),
                             Container(
                               child: IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
                                   Icons.favorite,
+                                  size: 15,
                                 ),
                                 color: Colors.black,
                               ),

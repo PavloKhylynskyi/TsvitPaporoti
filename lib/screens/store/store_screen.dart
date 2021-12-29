@@ -21,28 +21,9 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-          ItemCard(),
-        ],
-      ),
+    return ListView.builder(
+      itemBuilder: (context, index) => const ItemCard(),
+      itemCount: 15,
     );
   }
 }
