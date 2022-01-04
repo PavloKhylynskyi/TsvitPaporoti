@@ -14,11 +14,11 @@ class Menu extends StatelessWidget {
         child: ListView(
           children: [
             ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.store,
                   color: Colors.black,
                 ),
-                title: Text(
+                title: const Text(
                   'Магазин',
                 ),
                 onTap: () {
@@ -29,11 +29,11 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.account_box,
                   color: Colors.black,
                 ),
-                title: Text(
+                title: const Text(
                   'Обліковий запис',
                 ),
                 onTap: () {
@@ -44,11 +44,11 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.contact_page,
                   color: Colors.black,
                 ),
-                title: Text(
+                title: const Text(
                   'Контакти',
                 ),
                 onTap: () {
@@ -59,11 +59,11 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.list_alt_outlined,
                   color: Colors.black,
                 ),
-                title: Text('Про нас'),
+                title: const Text('Про нас'),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.about, (route) => false);
@@ -72,11 +72,11 @@ class Menu extends StatelessWidget {
               color: Colors.black,
             ),
             ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.pending,
                   color: Colors.black,
                 ),
-                title: Text('Блог'),
+                title: const Text('Блог'),
                 onTap: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Screens.blog, (route) => false);

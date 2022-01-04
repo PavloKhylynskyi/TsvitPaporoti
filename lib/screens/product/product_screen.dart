@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:tsvit_paporoti/components/main_app_bar.dart';
 import 'package:tsvit_paporoti/constants/constants.dart';
+import 'package:tsvit_paporoti/models/product.dart';
+import 'package:tsvit_paporoti/screens/product/components/description.dart';
 import 'package:tsvit_paporoti/screens/product/components/gallery.dart';
 import 'package:tsvit_paporoti/screens/product/components/item_counter.dart';
+import 'package:tsvit_paporoti/screens/product/components/recently_reviewed.dart';
 import 'package:tsvit_paporoti/screens/product/components/response_dialog.dart';
+import 'package:tsvit_paporoti/screens/product/components/responses.dart';
 import 'package:tsvit_paporoti/screens/product/components/tabs.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+  final Product product;
+
+  const ProductScreen({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildMainAppBar(),
-      body: const _Body(),
+      body: _Body(product: product),
     );
   }
 }
 
 class _Body extends StatelessWidget {
-  const _Body({Key? key}) : super(key: key);
+  final Product product;
+
+  const _Body({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +37,17 @@ class _Body extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Gallery(),
+            Gallery(
+              images: product.images,
+            ),
             const SizedBox(height: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Мило Грація',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
+                Text(
+                  product.name,
+                  style: const TextStyle(
+                      fontSize: 30, fontWeight: FontWeight.w300),
                 ),
                 Row(
                   children: [
@@ -51,9 +62,9 @@ class _Body extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 15),
-                    const Text(
-                      '1 відгук',
-                      style: TextStyle(fontWeight: FontWeight.w300),
+                    Text(
+                      '${product.responses.length} відгуків',
+                      style: const TextStyle(fontWeight: FontWeight.w300),
                     ),
                     const VerticalDivider(),
                     TextButton(
@@ -101,25 +112,30 @@ class _Body extends StatelessWidget {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           'Цвіт папороті',
                           style: TextStyle(fontWeight: FontWeight.w300),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
-                          'graciya_mylo',
+                          product.term,
                           style: TextStyle(fontWeight: FontWeight.w300),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
-                          'В наявності',
+                          product.availability
+                              ? 'В наявності'
+                              : 'Немає в наявності',
                           style: TextStyle(
-                              color: Colors.green, fontWeight: FontWeight.w300),
+                              color: product.availability
+                                  ? Colors.green
+                                  : Colors.red,
+                              fontWeight: FontWeight.w300),
                         ),
                       ],
                     ),
@@ -133,9 +149,9 @@ class _Body extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    '55,00 ₴',
-                    style: TextStyle(
+                  Text(
+                    '${product.price} ₴',
+                    style: const TextStyle(
                       color: kPrimaryColor,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -165,9 +181,9 @@ class _Body extends StatelessWidget {
                           onPressed: () {},
                           icon: const Icon(
                             Icons.favorite,
-                            size: 15,
                           ),
                           color: Colors.black,
+                          padding: EdgeInsets.zero,
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(color: kGreyColor),
@@ -181,7 +197,18 @@ class _Body extends StatelessWidget {
               ),
               color: const Color(0xFFF5F5F5),
             ),
-            const Tabs(),
+            // Tabs(
+            //   description: product.description,
+            //   responses: product.responses,
+            // ),
+            Description(description: product.description),
+            (product.responses.isNotEmpty)
+                ? Responses(
+                    responses: product.responses,
+                  )
+                : const SizedBox(),
+            const SizedBox(height: 15.0),
+            const RecentlyReviewed(),
           ],
         ),
       ),

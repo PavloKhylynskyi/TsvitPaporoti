@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tsvit_paporoti/models/response.dart';
 
 class Tabs extends StatefulWidget {
-  const Tabs({Key? key}) : super(key: key);
+  final String description;
+  final List<Response> responses;
+
+  const Tabs({
+    Key? key,
+    required this.description,
+    required this.responses,
+  }) : super(key: key);
 
   @override
   _TabsState createState() => _TabsState();
@@ -56,20 +64,10 @@ class _TabsState extends State<Tabs> {
         Container(
           child: (state == 0)
               ? Column(
-                  children: const [
+                  children: [
                     Text(
-                      '''Зварене за рецептом Дитячого мила з'''
-                      ''' додавання подрібнених квітів календули та ромашки. '''
-                      '''Ароматна композиція має заспокійливий, гармонізуючий ефект.'''
-                      '''\n\nДля всіх типів шкіри.\n''',
-                      style: TextStyle(fontWeight: FontWeight.w300),
-                    ),
-                    Text(
-                      '''Склад: Омилені олії оливкова, кокосова, касторова, '''
-                      '''соняшникова; відвар ромашки та календули; NaOH;'''
-                      ''' ефірні олії герані, меліси, кипариса.\n\nЗберігати при температурі -5-+22 °С і вологості повітря 75%.'''
-                      ''' Термін придатності – 9 місяців.''',
-                      style: TextStyle(fontWeight: FontWeight.w300),
+                      widget.description,
+                      style: const TextStyle(fontWeight: FontWeight.w300),
                     )
                   ],
                 )

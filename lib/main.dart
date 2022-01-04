@@ -18,7 +18,6 @@ class Application extends StatelessWidget {
       theme: AppTheme.light,
       // darkTheme: AppTheme.dark,
       routes: navigation.routes,
-      // home: const BlogScreen(),
     );
   }
 }

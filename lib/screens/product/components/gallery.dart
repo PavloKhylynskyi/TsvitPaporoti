@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Gallery extends StatefulWidget {
-  const Gallery({Key? key}) : super(key: key);
+  final List<String> images;
+
+  const Gallery({
+    Key? key,
+    required this.images,
+  }) : super(key: key);
 
   @override
   _GalleryState createState() => _GalleryState();
 }
 
 class _GalleryState extends State<Gallery> {
-  final List<String> image = [
-    'assets/images/gratsiia_1.jpg',
-    'assets/images/gratsiia_2.jpg',
-    'assets/images/gratsiia_3.jpg',
-  ];
   int currentIndex = 0;
 
   @override
@@ -23,14 +23,14 @@ class _GalleryState extends State<Gallery> {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 5.0),
-          child: Image.asset(image[currentIndex]),
+          child: Image.asset(widget.images[currentIndex]),
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: List.generate(
-              image.length,
+              widget.images.length,
               (index) => Container(
                 height: 100,
                 width: 105,
@@ -43,7 +43,7 @@ class _GalleryState extends State<Gallery> {
                         width: 100,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage(image[index]),
+                            image: AssetImage(widget.images[index]),
                             fit: BoxFit.cover,
                           ),
                         ),

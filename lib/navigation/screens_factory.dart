@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:tsvit_paporoti/models/product.dart';
 import 'package:tsvit_paporoti/screens/about/about_screen.dart';
 import 'package:tsvit_paporoti/screens/account/account_screen.dart';
 import 'package:tsvit_paporoti/screens/blog/blog_screen.dart';
@@ -12,5 +13,4 @@ class ScreensFactory {
   Widget makeContactsScreen() => const ContactsScreen();
   Widget makeAboutScreen() => const AboutScreen();
   Widget makeBlogScreen() => const BlogScreen();
-  Widget makeProductScreen() => const ProductScreen();
 }

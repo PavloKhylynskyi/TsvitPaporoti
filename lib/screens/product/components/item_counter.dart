@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tsvit_paporoti/constants/constants.dart';
 
 class ItemCounter extends StatefulWidget {
@@ -55,10 +56,12 @@ class _ItemCounterState extends State<ItemCounter> {
             controller: controller,
             keyboardType: TextInputType.number,
             textAlign: TextAlign.center,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             decoration: const InputDecoration(
               counterText: '', //hide the counterText
               enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
               focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
+              contentPadding: EdgeInsets.zero,
             ),
           ),
           decoration: BoxDecoration(
